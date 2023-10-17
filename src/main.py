@@ -1,5 +1,6 @@
-import pygame
+import pygame.freetype
 import pygame_wrapper as pgw
+from mainMenu import MainMenu
 
 
 class Game(pgw.GameType):
@@ -8,17 +9,18 @@ class Game(pgw.GameType):
     """
 
     def __init__(self):
-        super().__init__("Valorant2D - Singleplayer", RES=(1280, 720), fpsCap=60)
-        self.menus = []
+        super().__init__("Valorant2D - Singleplayer", RES=(1280, 720), fpsCap=60, hwflags=[pygame.HWACCEL, pygame.SRCALPHA])
+        self.menus = [MainMenu(self.screen, self.fpsClock, self.fps)]
 
     def run(self) -> None:
-        self.router(0)
+        self.router(0).run()
 
     def router(self, idx) -> pgw.MenuType:  # noqa:signature ; signature will not match
         return self.menus[idx]
 
 
 def main():
+    pygame.init()
     g = Game()
     g.run()
 
