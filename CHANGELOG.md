@@ -45,3 +45,11 @@ Things to add:
   - It would also be great to code a level format so that I can create a level editor of some kind. (JSON? im not sure yet)
 - Connecting game to play button
 - More menu stuff
+
+Im not really gonna touch on this changelog that much anymore due to how long it can take to write stuff
+
+
+## 10/20/2023
+#### 4:41 PM:
+Project is really far along, right now just stuck on trying to make a level system and level editor.
+Things to add is very similar

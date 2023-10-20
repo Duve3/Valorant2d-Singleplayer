@@ -3,6 +3,8 @@ import pygame.freetype
 import pygame_wrapper as pgw
 import pygame_wrapper.logging
 import pygame_wrapper.UI
+from game.game import Game
+from config import Config
 
 
 class DisclaimerMenu(pgw.MenuType):
@@ -79,8 +81,9 @@ class DisclaimerMenu(pgw.MenuType):
 
 
 class MainMenu(pgw.MenuType):
-    def __init__(self, screen, fpsClock, fps):
+    def __init__(self, screen, fpsClock, fps, config: Config):
         super().__init__(screen, fpsClock, fps)
+        self.config = config
         self.logger = pgw.logging.setupLogging(self.__class__.__name__, level=logging.DEBUG)
 
         self.bgColor = pgw.CustomColor(
@@ -92,6 +95,8 @@ class MainMenu(pgw.MenuType):
         self.FONT_Button = pgw.Font("./assets/Comfortaa.ttf", 30, (200, 200, 200))  # the font for buttons
         self.BUTTON_Play = pgw.UI.Button(self.screen.get_rect().centerx - 100, 200, 200, 40, (100, 100, 100), (60, 60, 60), self.FONT_Button, "Play")  # play button
 
+        self.game = Game(self.screen, self.fpsClock, self.fps, self.config)
+
     def rendering(self) -> None:
         self.screen.fill(self.bgColor)
 
@@ -101,7 +106,7 @@ class MainMenu(pgw.MenuType):
 
     def logic(self):
         if self.BUTTON_Play.state:  # check if the button is clicked
-            pass  # add play menu enter here/enter game ig?
+            self.game.run()
 
     def run(self) -> None:
         self.disclaimer.run()

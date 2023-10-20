@@ -1,0 +1,1 @@
+{"LEVEL_NAME": "Tutorial", "LEVEL_VERSION": 0, "LEVEL_BACKGROUND": {"COLOR": true, "VALUE": [200, 200, 200, 255]}, "OBJECTS": [{"_type": "tile", "x": 15, "y": 10, "sizex": 50, "sizey": 100, "textureID": 0, "color": [255, 255, 255, 255]}, {"_type": "tile", "x": 100, "y": 100, "sizex": 50, "sizey": 20, "textureID": 0, "color": [255, 0, 0, 255]}]}
