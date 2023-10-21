@@ -51,5 +51,6 @@ Im not really gonna touch on this changelog that much anymore due to how long it
 
 ## 10/20/2023
 #### 4:41 PM:
-Project is really far along, right now just stuck on trying to make a level system and level editor.
-Things to add is very similar
+The Project is really far along, right now just stuck on trying to make a level system and level editor.
+Things to add are very similar to the last list
+Might switch to creating this entire project in godot game engine as there's so much boilerplate.
